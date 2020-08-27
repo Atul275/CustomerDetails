@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "cusDetails": [
+        {
+          "fname": "Atul",
+          "lname": "Kesharwani",
+          "email": "atul@gmail.com",
+          "contact": "45678765567",
+          "owner": "true"
+        }
+      ],
+      "proDetails": [
+        {
+          "proName": "One in upper floar",
+          "proType": "First",
+          "proRooms": "2",
+          "proKichens": "1",
+          "proLivRoom": "3",
+          "proBathroom": "3",
+          "proGarden": "true"
+        }
+      ],
+      "addrDetails": [
+        {
+          "address1": "Silkboard",
+          "address2": "Silkboard",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India"
+        }
+      ],
+      "id": 1
+    }
+  ]
+}

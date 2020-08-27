@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container table-responsive">
+        <h2><u>Profile Details:</u></h2>
+        <div class="">
+            <div class="card">
+                <h4 class="card-title">Name: {{userDetails[0].cusDetails[0].fname}}
+                    {{userDetails[0].cusDetails[0].lname}}</h4>
+                <h5>Email: {{userDetails[0].cusDetails[0].email}}</h5>
+                <b> Contact: {{userDetails[0].cusDetails[0].contact}}</b>
+                <!-- <button type="button" class="btn btn-primary" id="buttonModal"
+        data-toggle="modal" data-target="#exampleModal"> Profile</button> -->
+                <div class="mt-3">
+                    <button type="button" class="btn btn-primary mr-1" id="buttonModal" data-toggle="modal"
+                        data-target="#exampleModal1">Proparty</button>
+                    <button type="button" class="btn btn-primary ml-1" id="buttonModal" data-toggle="modal"
+                        data-target="#exampleModal2">Address</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add Modal -->
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-xl">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Step</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div>irfan khan</div>
+  </div>
+</div>
+</div> -->
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Step</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="ml-5">
+                    <h5 class="card-title">Property Name: {{userDetails[0].proDetails[0].proName}}</h5>
+                    <h5 class="card-title">Property Type: {{userDetails[0].proDetails[0].proType}}</h5>
+                    <h5 class="card-title">Room: {{userDetails[0].proDetails[0].proRooms}}</h5>
+                    <h5 class="card-title">Kitchen: {{userDetails[0].proDetails[0].proKichens}}</h5>
+                    <h5 class="card-title">Living Room: {{userDetails[0].proDetails[0].proLivRoom}}</h5>
+                    <h5 class="card-title">Bathroom: {{userDetails[0].proDetails[0].proBathroom}}</h5>
+                    <h5 class="card-title">Garden: {{userDetails[0].proDetails[0].proGarden}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Step</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="ml-5">
+                    <h5 class="card-title">Address1: {{userDetails[0].addrDetails[0].address1}}</h5>
+                    <h5 class="card-title">Address2: {{userDetails[0].addrDetails[0].address2}}</h5>
+                    <h5 class="card-title">City: {{userDetails[0].addrDetails[0].city}}</h5>
+                    <h5 class="card-title">State: {{userDetails[0].addrDetails[0].state}}</h5>
+                    <h5 class="card-title">Country: {{userDetails[0].addrDetails[0].country}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
