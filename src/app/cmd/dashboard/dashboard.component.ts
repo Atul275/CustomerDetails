@@ -71,7 +71,7 @@ export class DashboardComponent implements OnInit {
       }],
       "addrDetails": [{
         "address1": data.address1,
-        "address2": data.address1,
+        "address2": data.address2,
         "city": data.city,
         "state": data.state,
         "country": data.country

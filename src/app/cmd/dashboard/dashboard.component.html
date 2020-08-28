@@ -3,17 +3,17 @@
     <div class="container table-responsive">
         <div style="text-align: right;">
             <button type="button" class="btn btn-primary btn-sm" id="buttonModal" data-toggle="modal"
-                data-target="#exampleModal">Add record</button>
+                data-target="#addModal">Add Record</button>
         </div>
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">S.No.</th>
-                    <th scope="col">First name</th>
-                    <th scope="col">Last name</th>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Proparty name</th>
-                    <th scope="col">proparty type</th>
+                    <th scope="col">Proparty Name</th>
+                    <th scope="col">proparty Type</th>
                     <th scope="col">City</th>
                     <th scope="col">View</th>
                     <th scope="col">Edit</th>
@@ -30,15 +30,19 @@
                     <td>{{ item.proDetails[0].proType }}</td>
                     <td>{{ item.addrDetails[0].city }}</td>
                     <td>
-                        <button type="button" class="btn btn btn-primary btn-sm"
-                            (click)="viewDetails(item.id)">View</button>
+                        <button type="button" class="btn btn btn-primary btn-sm" (click)="viewDetails(item.id)">
+                            View
+                        </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-info btn-sm" (click)="updateDetails(item.id)">Edit</button>
+                        <button type="button" class="btn btn-info btn-sm" (click)="updateDetails(item.id)">
+                            <span class="edit-icon">&#9998;</span>
+                        </button>
                     </td>
                     <td>
-                        <button type="button" class="btn btn-danger btn-sm"
-                            (click)="deleteRecord(item.id)">Delete</button>
+                        <button type="button" class="btn btn-danger btn-sm" (click)="deleteRecord(item.id)">
+                            Delete
+                        </button>
                     </td>
                 </tr>
             </tbody>
@@ -47,7 +51,7 @@
 </div>
 
 <!-- Add Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content" [formGroup]="formData">
             <div class="modal-header">
@@ -60,13 +64,13 @@
                 <div class="modal-body">
                     <h5>Customer Details</h5>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">First name</label>
+                        <label for="exampleInputEmail1">First Name</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp1"
                             formControlName="cusFName" />
                         <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Last name</label>
+                        <label for="exampleInputEmail1">Last Name</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp1"
                             formControlName="cusLname" />
                         <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
@@ -78,7 +82,7 @@
                         <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Contact number</label>
+                        <label for="exampleInputEmail1">Contact</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp1"
                             formControlName="cusContact" />
                         <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
@@ -109,13 +113,13 @@
                 <div class="modal-body">
                     <h5>Proparty Details</h5>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">Proparty name</label>
+                        <label for="exampleInputEmail2">Proparty Name</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
                             formControlName="proFName" />
-                        <small id="emailHelp2" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">Proparty type</label>
+                        <label for="exampleInputEmail2">Proparty Type</label>
                         <select id="inputState" class="form-control" formControlName="proType">
                             <option selected>First</option>
                             <option>Second</option>
@@ -123,28 +127,28 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">No. of rooms</label>
+                        <label for="exampleInputEmail2">No. of Rooms</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
                             formControlName="proRooms" />
-                        <small id="emailHelp2" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">No. of kichens</label>
+                        <label for="exampleInputEmail2">No. of Kichens</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
                             formControlName="proKichens" />
-                        <small id="emailHelp2" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">No. of living rooms</label>
+                        <label for="exampleInputEmail2">No. of Living Rooms</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
                             formControlName="proLivRoom" />
-                        <small id="emailHelp2" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">No. of bathrooms</label>
+                        <label for="exampleInputEmail2">No. of Bathrooms</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
                             formControlName="proBathroom" />
-                        <small id="emailHelp2" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -175,29 +179,29 @@
                         <label for="exampleInputEmail3">Address1</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp3"
                             formControlName="address1" />
-                        <small id="emailHelp3" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail3">Address2</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp3"
                             formControlName="address2" />
-                        <small id="emailHelp3" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail3">City</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp3" formControlName="city" />
-                        <small id="emailHelp3" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail3">State</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp3" formControlName="state" />
-                        <small id="emailHelp3" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail3">Country</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp3"
                             formControlName="country" />
-                        <small id="emailHelp3" class="form-text text-muted">Any error message...</small>
+                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
                     </div>
                 </div>
                 <div class="modal-footer">

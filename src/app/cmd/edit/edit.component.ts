@@ -9,7 +9,6 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./edit.component.scss']
 })
 export class EditComponent implements OnInit {
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -91,7 +90,7 @@ export class EditComponent implements OnInit {
       }],
       "addrDetails": [{
         "address1": data.address1,
-        "address2": data.address1,
+        "address2": data.address2,
         "city": data.city,
         "state": data.state,
         "country": data.country
@@ -107,5 +106,4 @@ export class EditComponent implements OnInit {
   submitForm() {
     console.log(this.formData.value);
   }
-
 }
