@@ -12,25 +12,225 @@
       ],
       "proDetails": [
         {
-          "proName": "One in upper floar",
+          "proName": "House",
           "proType": "First",
-          "proRooms": "2",
-          "proKichens": "1",
-          "proLivRoom": "3",
-          "proBathroom": "3",
+          "proRooms": "10",
+          "proKitchens": "2",
+          "proLivRoom": "6",
+          "proBathroom": "2",
           "proGarden": "true"
         }
       ],
       "addrDetails": [
         {
           "address1": "Silkboard",
-          "address2": "Silkboard",
+          "address2": "Bommanahalli",
           "city": "Bangalore",
+          "landmark": "Near to Snooker zone",
           "state": "Karnataka",
-          "country": "India"
+          "country": "India",
+          "pincode": "560068"
         }
       ],
       "id": 1
+    },
+    {
+      "cusDetails": [
+        {
+          "fname": "Aditya",
+          "lname": "Kumar",
+          "email": "aditya54@gmail.com",
+          "contact": "9874205468",
+          "owner": "false"
+        }
+      ],
+      "proDetails": [
+        {
+          "proName": "Home",
+          "proType": "Second",
+          "proRooms": "5",
+          "proKitchens": "1",
+          "proLivRoom": "3",
+          "proBathroom": "1",
+          "proGarden": "true"
+        }
+      ],
+      "addrDetails": [
+        {
+          "address1": "Jabalpur",
+          "address2": "Sadar Bajar",
+          "city": "Jabalpur",
+          "state": "Madhya Pradesh",
+          "country": "India"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "cusDetails": [
+        {
+          "fname": "Anuj",
+          "lname": "Kumar",
+          "email": "anuj@gmail.com",
+          "contact": "5621656665",
+          "owner": "true"
+        }
+      ],
+      "proDetails": [
+        {
+          "proName": "Flat",
+          "proType": "First",
+          "proRooms": "10",
+          "proKitchens": "2",
+          "proLivRoom": "6",
+          "proBathroom": "2",
+          "proGarden": "true"
+        }
+      ],
+      "addrDetails": [
+        {
+          "address1": "Rewa",
+          "address2": "Anantpur",
+          "city": "Rewa",
+          "state": "Madhya Pradesh",
+          "country": "India",
+          "pincode": "486001"
+        }
+      ],
+      "id": 3
+    },
+    {
+      "cusDetails": [
+        {
+          "fname": "Anup",
+          "lname": "Kesharwani",
+          "email": "anup@gmail.com",
+          "contact": "9678990988",
+          "owner": "false"
+        }
+      ],
+      "proDetails": [
+        {
+          "proName": "Home",
+          "proType": "Third",
+          "proRooms": "8",
+          "proKitchens": "1",
+          "proLivRoom": "6",
+          "proBathroom": "1",
+          "proGarden": "true"
+        }
+      ],
+      "addrDetails": [
+        {
+          "address1": "Garhi",
+          "address2": "Teonther",
+          "city": "Rewa",
+          "state": "M.P.",
+          "country": "India",
+          "pincode": "486220"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "cusDetails": [
+        {
+          "fname": "Rahul",
+          "lname": "Singh",
+          "email": "rahul@gmail.com",
+          "contact": "6789039808",
+          "owner": "false"
+        }
+      ],
+      "proDetails": [
+        {
+          "proName": "Rent Room",
+          "proType": "Third",
+          "proRooms": "1",
+          "proKitchens": "0",
+          "proLivRoom": "1",
+          "proBathroom": "0",
+          "proGarden": "false"
+        }
+      ],
+      "addrDetails": [
+        {
+          "address1": "Rewa",
+          "address2": "College Chauraha",
+          "city": "Rewa",
+          "state": "M.P.",
+          "country": "India",
+          "pincode": "486001"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "cusDetails": [
+        {
+          "fname": "Urmila",
+          "lname": "Singh",
+          "email": "urmila@gmail.com",
+          "contact": "9846734804",
+          "owner": "true"
+        }
+      ],
+      "proDetails": [
+        {
+          "proName": "House",
+          "proType": "Second",
+          "proRooms": "6",
+          "proKitchens": "2",
+          "proLivRoom": "2",
+          "proBathroom": "1",
+          "proGarden": "false"
+        }
+      ],
+      "addrDetails": [
+        {
+          "address1": "37/09, Gali no. 3",
+          "address2": "Indiara nagar",
+          "city": "Rewa",
+          "state": "M.P.",
+          "country": "India",
+          "pincode": "486001"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "cusDetails": [
+        {
+          "fname": "Ram",
+          "lname": "Shukla",
+          "email": "ram@gmail.com",
+          "contact": "9765345209",
+          "owner": "true"
+        }
+      ],
+      "proDetails": [
+        {
+          "proName": "Appartement",
+          "proType": "First",
+          "proRooms": "20",
+          "proKitchens": "4",
+          "proLivRoom": "12",
+          "proBathroom": "4",
+          "proGarden": "true"
+        }
+      ],
+      "addrDetails": [
+        {
+          "address1": "83/05",
+          "address2": "Banashankari",
+          "landmark": "Near to metro station",
+          "city": "Bangalore",
+          "state": "Karnataka",
+          "country": "India",
+          "pincode": "546002"
+        }
+      ],
+      "id": 7
     }
   ]
 }

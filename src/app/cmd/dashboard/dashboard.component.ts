@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { ApisService } from '../../services/apis.service';
 import { Router } from '@angular/router';
 
@@ -18,23 +18,25 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   formData = this.fb.group({
-    cusFName: [''],
-    cusLname: [''],
-    cusEmail: [''],
-    cusContact: [''],
+    cusFName: ['', Validators.required],
+    cusLname: ['', Validators.required],
+    cusEmail: ['', Validators.required],
+    cusContact: ['', Validators.required, [Validators.pattern(/((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}/)]],
     cusOwner: [''],
-    proFName: [''],
-    proType: [''],
-    proRooms: [''],
-    proKichens: [''],
+    proFName: ['', Validators.required],
+    proType: ['', Validators.required],
+    proRooms: ['', Validators.required],
+    proKitchens: [''],
     proLivRoom: [''],
     proBathroom: [''],
     proGarden: [''],
-    address1: [''],
+    address1: ['', Validators.required],
     address2: [''],
-    city: [''],
-    state: [''],
-    country: ['']
+    landmark:[''],
+    city: ['', Validators.required],
+    state: ['', Validators.required],
+    country: ['', Validators.required],
+    pincode: ['', Validators.required]
   });
 
   ngOnInit(): void {
@@ -64,7 +66,7 @@ export class DashboardComponent implements OnInit {
         "proName": data.proFName,
         "proType": data.proType,
         "proRooms": data.proRooms,
-        "proKichens": data.proKichens,
+        "proKitchens": data.proKitchens,
         "proLivRoom": data.proLivRoom,
         "proBathroom": data.proBathroom,
         "proGarden": data.proGarden
@@ -72,9 +74,11 @@ export class DashboardComponent implements OnInit {
       "addrDetails": [{
         "address1": data.address1,
         "address2": data.address2,
+        "landmark":data.landmark,
         "city": data.city,
         "state": data.state,
-        "country": data.country
+        "country": data.country,
+        "pincode": data.pincode
       }]
     }
 

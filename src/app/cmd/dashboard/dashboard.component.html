@@ -64,28 +64,61 @@
                 <div class="modal-body">
                     <h5>Customer Details</h5>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">First Name</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp1"
-                            formControlName="cusFName" />
-                        <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
+                        <label for="exampleInputEmail1">*First Name</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp1" formControlName="cusFName"
+                            placeholder="enter first name" />
+                        <div *ngIf="formData.controls.cusFName?.invalid && (formData.controls.cusFName?.dirty || formData.controls.cusFName?.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.cusFName.errors?.required">
+                                First Name is required.
+                            </span>
+                            <div *ngIf="formData.controls.cusFName.errors?.minLength">
+                                Minimum required character is 3.
+                            </div>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Last Name</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp1"
-                            formControlName="cusLname" />
-                        <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
+                        <label for="exampleInputEmail1">*Last Name</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp1" formControlName="cusLname"
+                            placeholder="enter last name" />
+                        <div *ngIf="formData.controls.cusLname?.invalid && (formData.controls.cusLname?.dirty || formData.controls.cusLname?.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.cusLname.errors?.required">
+                                Last Name is required.
+                            </span>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp1"
-                            formControlName="cusEmail" />
-                        <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
+                        <label for="exampleInputEmail1">*Email</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp1" formControlName="cusEmail"
+                            placeholder="enter email" />
+                        <div *ngIf="formData.controls.cusEmail?.invalid && (formData.controls.cusEmail?.dirty || formData.controls.cusEmail?.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.cusEmail.errors?.required">
+                                Email is required.
+                            </span>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Contact</label>
+                        <label for="exampleInputEmail1">*Contact</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp1"
-                            formControlName="cusContact" />
-                        <!-- <small id="emailHelp1" class="form-text text-muted">Any error message...</small> -->
+                            formControlName="cusContact" placeholder="enter contact number" />
+                        <div *ngIf="formData.controls.cusContact.invalid && (formData.controls.cusContact.dirty || formData.controls.cusContact.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.cusContact.errors?.required">
+                                Contact is required.
+                            </span>
+                            <span *ngIf="formData.controls.cusContact.errors?.pattern">
+                                omly numbers is required.
+                            </span>
+                        </div>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
@@ -102,54 +135,80 @@
                                 Broker
                             </label>
                         </div>
+
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" (click)="nextStep()">Next</button>
+                    <button type="button" class="btn btn-primary" (click)="nextStep()" [disabled]="formData.controls.cusFName.errors?.required 
+                        || formData.controls.cusLname.errors?.required
+                        || formData.controls.cusEmail.errors?.required
+                        || formData.controls.cusContact.errors?.required">
+                        Next
+                    </button>
                 </div>
             </div>
             <div *ngIf="formStep == 2">
                 <div class="modal-body">
                     <h5>Proparty Details</h5>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">Proparty Name</label>
+                        <label for="exampleInputEmail2">*Proparty Name</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
                             formControlName="proFName" />
-                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
+                        <div *ngIf="formData.controls.proFName.invalid && (formData.controls.proFName.dirty || formData.controls.proFName.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.proFName.errors?.required">
+                                Propery name is required.
+                            </span>
+                        </div>
                     </div>
+
                     <div class="form-group">
-                        <label for="exampleInputEmail2">Proparty Type</label>
+                        <label for="exampleInputEmail2">*Proparty Type</label>
                         <select id="inputState" class="form-control" formControlName="proType">
                             <option selected>First</option>
                             <option>Second</option>
                             <option>Third</option>
                         </select>
+                        <div *ngIf="formData.controls.proType.invalid && (formData.controls.proType.dirty || formData.controls.proType.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.proType.errors?.required">
+                                Please property select type.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail2">*No. of Rooms</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp2" formControlName="proRooms"
+                            placeholder="please enter number of rooms" />
+                        <div *ngIf="formData.controls.proRooms.invalid && (formData.controls.proRooms.dirty || formData.controls.proRooms.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.proRooms.errors?.required">
+                                Number of rooms required.
+                            </span>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail2">No. of Rooms</label>
+                        <label for="exampleInputEmail2">No. of Kitchen</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
-                            formControlName="proRooms" />
-                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail2">No. of Kichens</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp2"
-                            formControlName="proKichens" />
-                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
+                            formControlName="proKitchens" placeholder="enter number of kitchens(optional)" />
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail2">No. of Living Rooms</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
-                            formControlName="proLivRoom" />
-                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
+                            formControlName="proLivRoom" placeholder="enter number of living rooms(optional)" />
                     </div>
+
                     <div class="form-group">
                         <label for="exampleInputEmail2">No. of Bathrooms</label>
                         <input type="text" class="form-control" aria-describedby="emailHelp2"
-                            formControlName="proBathroom" />
-                        <!-- <small id="emailHelp2" class="form-text text-muted">Any error message...</small> -->
+                            formControlName="proBathroom" placeholder="enter number of bathrooms(optional)" />
                     </div>
+
                     <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="radio" formControlName="proGarden" id="gridRadios1"
@@ -167,49 +226,95 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" (click)="backStep()">Back</button>
-                    <button type="button" class="btn btn-primary" (click)="nextStep()">Next</button>
+                    <button type="button" class="btn btn-primary" (click)="nextStep()" [disabled]="formData.controls.proFName.errors?.required
+                        || formData.controls.proType.errors?.required
+                        || formData.controls.proRooms.errors?.required">
+                        Next
+                    </button>
                 </div>
             </div>
             <div *ngIf="formStep == 3">
                 <div class="modal-body">
                     <h5>Address Details</h5>
                     <div class="form-group">
-                        <label for="exampleInputEmail3">Address1</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp3"
-                            formControlName="address1" />
-                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
+                        <label for="exampleInputEmail3">*Address1</label>
+                        <input type="text" class="form-control" aria-describedby="emailHelp3" formControlName="address1"
+                            placeholder="enter address" />
+                        <div *ngIf="formData.controls.address1.invalid && (formData.controls.address1.dirty || formData.controls.address1.touched)"
+                            class="alert alert-danger">
+
+                            <span *ngIf="formData.controls.address1.errors?.required">
+                                Address is required.
+                            </span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">Address2</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp3"
+                                formControlName="address2" placeholder="enter address(optional)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">Landmark</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp3"
+                                formControlName="landmark" placeholder="enter landmark(optional)" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail3">*City</label>
+                            <input type="text" class="form-control" aria-describedby="emailHelp3" formControlName="city"
+                                placeholder="Enter city name" />
+                            <div *ngIf="formData.controls.city.invalid && (formData.controls.city.dirty || formData.controls.city.touched)"
+                                class="alert alert-danger">
+
+                                <span *ngIf="formData.controls.city.errors?.required">
+                                    City required.
+                                </span>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">*State</label>
+                                <input type="text" class="form-control" aria-describedby="emailHelp3"
+                                    formControlName="state" placeholder="enter state" />
+                                <div *ngIf="formData.controls.state.invalid && (formData.controls.state.dirty || formData.controls.state.touched)"
+                                    class="alert alert-danger">
+
+                                    <span *ngIf="formData.controls.state.errors?.required">
+                                        State required.
+                                    </span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail3">*Country</label>
+                                    <input type="text" class="form-control" aria-describedby="emailHelp3"
+                                        formControlName="country" placeholder="enter country name" />
+                                    <div *ngIf="formData.controls.country.invalid && (formData.controls.country.dirty || formData.controls.country.touched)"
+                                        class="alert alert-danger">
+
+                                        <span *ngIf="formData.controls.country.errors?.required">
+                                            Country is required.
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail3">*Pincode</label>
+                                        <input type="text" class="form-control" aria-describedby="emailHelp3"
+                                            formControlName="pincode" placeholder="enter pincode" />
+                                        <div *ngIf="formData.controls.pincode.invalid && (formData.controls.pincode.dirty || formData.controls.pincode.touched)"
+                                            class="alert alert-danger">
+
+                                            <span *ngIf="formData.controls.pincode.errors?.required">
+                                                Pincode required.
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            (click)="backStep()">Back</button>
+                                        <button type="button" class="btn btn-primary" (click)="submitForm()"
+                                            [disabled]="formData.invalid" data-dismiss="modal">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">Address2</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp3"
-                            formControlName="address2" />
-                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">City</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp3" formControlName="city" />
-                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">State</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp3" formControlName="state" />
-                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">Country</label>
-                        <input type="text" class="form-control" aria-describedby="emailHelp3"
-                            formControlName="country" />
-                        <!-- <small id="emailHelp3" class="form-text text-muted">Any error message...</small> -->
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" (click)="backStep()">Back</button>
-                    <button type="button" class="btn btn-primary" (click)="submitForm()"
-                        data-dismiss="modal">Save</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

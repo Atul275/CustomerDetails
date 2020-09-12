@@ -14,6 +14,7 @@ export class EditComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private apiCall: ApisService) { }
+
   formData = this.fb.group({
     cusFName: [''],
     cusLname: [''],
@@ -23,15 +24,17 @@ export class EditComponent implements OnInit {
     proFName: [''],
     proType: [''],
     proRooms: [''],
-    proKichens: [''],
+    proKitchens: [''],
     proLivRoom: [''],
     proBathroom: [''],
     proGarden: [''],
     address1: [''],
     address2: [''],
     city: [''],
+    landmark:[''],
     state: [''],
-    country: ['']
+    country: [''],
+    pincode: ['']
   });
   userID: any;
   ngOnInit(): void {
@@ -52,15 +55,17 @@ export class EditComponent implements OnInit {
           proFName: result[0].proDetails[0].proName,
           proType: result[0].proDetails[0].proType,
           proRooms: result[0].proDetails[0].proRooms,
-          proKichens: result[0].proDetails[0].proKichens,
+          proKitchens: result[0].proDetails[0].proKitchens,
           proLivRoom: result[0].proDetails[0].proLivRoom,
           proBathroom: result[0].proDetails[0].proBathroom,
           proGarden: result[0].proDetails[0].proGarden,
           address1: result[0].addrDetails[0].address1,
           address2: result[0].addrDetails[0].address2,
           city: result[0].addrDetails[0].city,
+          landmark: result[0].addrDetails[0].landmark,
           state: result[0].addrDetails[0].state,
-          country: result[0].addrDetails[0].country
+          country: result[0].addrDetails[0].country,
+          pincode: result[0].addrDetails[0].pincode
         })
       }, err => {
         console.log('Technical error!', 'Error message!');
@@ -83,7 +88,7 @@ export class EditComponent implements OnInit {
         "proName": data.proFName,
         "proType": data.proType,
         "proRooms": data.proRooms,
-        "proKichens": data.proKichens,
+        "proKitchens": data.proKitchens,
         "proLivRoom": data.proLivRoom,
         "proBathroom": data.proBathroom,
         "proGarden": data.proGarden
@@ -92,8 +97,10 @@ export class EditComponent implements OnInit {
         "address1": data.address1,
         "address2": data.address2,
         "city": data.city,
+        "landmark": data.landmark,
         "state": data.state,
-        "country": data.country
+        "country": data.country,
+        "pincode": data.pincode
       }]
     }
     this.apiCall.userUpdate(this.userID, input).subscribe(result => {
